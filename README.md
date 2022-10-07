@@ -1,4 +1,6 @@
 # solicitud_credito_web_node
+ #vesrsion de node
+ v18.9.0
  
 #Crear un proyecto en Node
 > npm init -y
