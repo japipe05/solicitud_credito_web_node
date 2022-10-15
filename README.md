@@ -17,3 +17,9 @@ morgan respuestas para la petision
 #modulo para ejecutar el servidor y guarde
 > npm i nodemon -D
 > npm run dev # guarda automaticamnete
+
+#dependencias leer archivos .env 
+>npm i dotenv
+
+#para las view
+> npm i ejs  
