@@ -23,3 +23,10 @@ morgan respuestas para la petision
 
 #para las view
 > npm i ejs  
+
+
+http://localhost:8088/solicitud
+
+
+#para los ico
+npm install express serve-favicon
