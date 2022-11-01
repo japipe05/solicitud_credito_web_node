@@ -7,9 +7,22 @@ solicitudRouter.get('/home', (req, res) =>{
     res.render('home');
 });
 
-solicitudRouter.get('/solicitud', (req, res) =>{
-    res.render('solicitud');
+solicitudRouter.get('/solicitudotp', (req, res) =>{
+    res.render('solicitudotp');
 });
+
+solicitudRouter.get('/login', (req, res) =>{
+    res.render('login');
+});
+
+solicitudRouter.get('/radicar', (req, res) =>{
+    res.render('radicar');
+});
+
+solicitudRouter.get('/validaradicado', (req, res) =>{
+    res.render('validaradicado');
+});
+/*
 solicitudRouter.post('/solicitud', (req, res) =>{
     //res.send("CREADO");
 
@@ -39,7 +52,7 @@ solicitudRouter.post('/solicitud', (req, res) =>{
         //res.render('home');
     })
 });
-
+*/
 export default solicitudRouter;
 
 

@@ -29,4 +29,8 @@ http://localhost:8088/solicitud
 
 
 #para los ico
-npm install express serve-favicon
+npm install express serve-favicon#
+
+#particles 
+>npm install particlesjs --save
+
