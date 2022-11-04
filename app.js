@@ -1,5 +1,5 @@
 console.clear();
-import express from "express";
+import express, { json } from "express";
 import dotenv from 'dotenv';
 import indexRouter from './routes/index.js';
 import favicon  from'serve-favicon'
@@ -19,6 +19,9 @@ SolicitudCreditoApp.use(express.static('public'));
 //motor de plantillas
 SolicitudCreditoApp.set('view engine', 'ejs');
 SolicitudCreditoApp.set('views', __dirname + '/views');
+
+SolicitudCreditoApp.use(express.urlencoded({extended:false}));
+SolicitudCreditoApp.use(express(json));
 
 SolicitudCreditoApp.use(indexRouter);
 

@@ -1,13 +1,28 @@
 import  { Router } from "express";
-
+import axios  from 'axios';
 const solicitudRouter = Router();
-
-
+let url = 'http://localhost:8087/api/otp';
+let transactionArr = []
 solicitudRouter.get('/home', (req, res) =>{
     res.render('home');
 });
 
 solicitudRouter.get('/solicitudotp', (req, res) =>{
+    res.render('solicitudotp');
+});
+
+solicitudRouter.post('/solicitudotp', (req, res) =>{
+
+    let data = {
+        username : req.body.username,
+        correo: req.body.correo
+    }
+    
+    axios.post(url,data).then(response =>{
+        console.log(response);
+    });
+
+
     res.render('solicitudotp');
 });
 
@@ -54,5 +69,6 @@ solicitudRouter.post('/solicitud', (req, res) =>{
 });
 */
 export default solicitudRouter;
+
 
 
