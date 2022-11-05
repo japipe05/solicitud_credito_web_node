@@ -34,3 +34,13 @@ npm install express serve-favicon#
 #particles 
 >npm install particlesjs --save
 
+#estas son las dependencias utilizadas 
+  "axios": "^1.1.3",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-validator": "^6.14.2",
+    "morgan": "^1.10.0",
+    "particlesjs": "^2.2.3",
+    "serve-favicon": "^2.5.0"

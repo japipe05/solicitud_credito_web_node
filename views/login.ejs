@@ -12,7 +12,17 @@
 </head>
 <body class="text-center">
     <main class="form-signin">
-        <form action="/login" " method="post">
+      <%if(success =='err'){ %>
+      <div class="alert alert-warning">
+        <strong>Warning!</strong> <%=success%>
+      </div>
+      <%} %>
+      <%if(success =='suc'){ %>
+        <div class="alert alert-success">
+          <strong>Success!</strong> Revisar el Mail <%=correo%> 
+        </div>
+        <%} %>
+        <form action="/login"  method="post">
           <img class="mb-4" src="Img/user.gif" alt="" width="50%" height="50%">
           <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
       
