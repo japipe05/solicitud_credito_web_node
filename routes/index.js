@@ -2,11 +2,14 @@ import  { Router } from "express";
 import axios  from 'axios';
 import dotenv from 'dotenv';
 import alert from 'alert';
+import jwt from 'jsonwebtoken';
+
 dotenv.config();
 const solicitudRouter = Router();
 let url = process.env.API_SEND_OTP;// 'http://localhost:8087/api/otp';
 let urllog = process.env.API_VAL_LOGIN; //'http://localhost:8087/api/login'
-let urlrad = process.env.API_VAL_RAD; //'http://localhost:8087/api/login'
+let urlrad = process.env.API_VAL_SOLICITED; //'http://localhost:8087/api/solicitud'
+let token ='';
 
 let transactionArr = []
 solicitudRouter.get('/home', (req, res) =>{
@@ -54,6 +57,7 @@ solicitudRouter.post('/login', async (req, res) =>{
     console.log(req.body.password);
     if (!datos){
         console.log(response.data);
+        token = response.data.access_token;
         res.render('radicar');
     }else{
         res.render('login',{ success:'err',correo:''});
@@ -91,7 +95,7 @@ solicitudRouter.post('/radicar', (req, res) =>{
     console.log(req.body.gastos);
     console.log(req.body.plazo);*/
 
-
+    console.log('head 1 : ' + req);
     let data = {
         tipoDocumento : req.body.tipoDocumento,
         numeroDocumento : req.body.numeroDocumento,
@@ -118,9 +122,11 @@ solicitudRouter.post('/radicar', (req, res) =>{
         gastos : req.body.gastos,
         plazo : req.body.plazo
     }
-    console.log(data); 
-
-    axios.post(urlrad,data).then(response =>{
+    console.log(data);
+     const config = {
+         headers: { Authorization: 'Bearer '+ token }
+     };
+    axios.post(urlrad,data,config).then(response =>{
         console.log(response);
     });
     
